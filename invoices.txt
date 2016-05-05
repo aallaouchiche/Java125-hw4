@@ -1,0 +1,54 @@
+The Small Consulting Group
+1313 Mockingbird Ln
+Redmond, WA 11111
+
+Invoice For: 
+N/A
+N/A
+N/A, WA N/A
+Coyote, Wiley 
+
+Invoice For Month Of: March, 2006
+Invoice Date: May 04, 2016
+
+Date        Consultant                   Skill                Hours  Charge
+----------  ---------------------------  ------------------   -----  ----------
+
+
+
+
+
+
+Total:                                                           16    2,400.00
+
+
+The Small Consulting Group                                            Page:   1
+===============================================================================
+
+The Small Consulting Group
+1313 Mockingbird Ln
+Redmond, WA 11111
+
+Invoice For: 
+N/A
+N/A
+N/A, WA N/A
+Sam, Yosemite 
+
+Invoice For Month Of: March, 2006
+Invoice Date: May 04, 2016
+
+Date        Consultant                   Skill                Hours  Charge
+----------  ---------------------------  ------------------   -----  ----------
+
+
+
+
+
+
+Total:                                                          108   19,400.00
+
+
+The Small Consulting Group                                            Page:   1
+===============================================================================
+
