@@ -108,26 +108,26 @@ public class TestAddress
         
         addr2 = new Address( null, city, state, postal );
         assertTrue( addr1.compareTo( addr2 ) > 0 );
-//        addr1 = new Address( null, city, state, postal );
-//        hash1 = addr1.hashCode();
-//        hash2 = addr2.hashCode();
-//        assertTrue( addr1.equals( addr2 ) );
-//        assertEquals( hash1, hash2 );
-//        
-//        addr2 = new Address( null, null, state, postal );
-//        assertFalse( addr1.equals( addr2 ) );
-//        addr1 = new Address( null, null, state, postal );
-//        hash1 = addr1.hashCode();
-//        hash2 = addr2.hashCode();
-//        assertTrue( addr1.equals( addr2 ) );
-//        assertEquals( hash1, hash2 );
-//        
-//        addr2 = new Address( null, null, state, null );
-//        assertFalse( addr1.equals( addr2 ) );
-//        addr1 = new Address( null, null, state, null );
-//        hash1 = addr1.hashCode();
-//        hash2 = addr2.hashCode();
-//        assertTrue( addr1.equals( addr2 ) );
-//        assertEquals( hash1, hash2 );
+        addr1 = new Address( null, city, state, postal );
+        hash1 = addr1.hashCode();
+        hash2 = addr2.hashCode();
+        assertTrue( addr1.equals( addr2 ) );
+        assertEquals( hash1, hash2 );
+        
+        addr2 = new Address( null, null, state, postal );
+        assertFalse( addr1.equals( addr2 ) );
+        addr1 = new Address( null, null, state, postal );
+        hash1 = addr1.hashCode();
+        hash2 = addr2.hashCode();
+        assertTrue( addr1.equals( addr2 ) );
+        assertEquals( hash1, hash2 );
+        
+        addr2 = new Address( null, null, state, null );
+        assertFalse( addr1.equals( addr2 ) );
+        addr1 = new Address( null, null, state, null );
+        hash1 = addr1.hashCode();
+        hash2 = addr2.hashCode();
+        assertTrue( addr1.equals( addr2 ) );
+        assertEquals( hash1, hash2 );
     }
 }

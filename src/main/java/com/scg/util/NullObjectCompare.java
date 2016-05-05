@@ -18,5 +18,27 @@ class NullObjectCompare {
 		else return POSITIVE;
 		
 	}
+	
+	
+	
+	/**
+	 * helper method that checks if any of the two strings is null
+	 * and returns the right value accordingly
+	 * @param first
+	 * @param second
+	 * @return > 0 , 0, < 0
+	 */
+	public static  int stringCompareHelper(String first, String second){
+		if (first == null && second == null) {
+			return 0;
+		} else if (first == null) {
+			return -1;
+			
+		} else if (second == null) {
+			return 1;
+		} else {
+			return first.compareTo(second);
+		}
+	}
 
 }

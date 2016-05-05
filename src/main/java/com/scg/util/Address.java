@@ -1,9 +1,10 @@
 package com.scg.util;
+import static com.scg.util.NullObjectCompare.*;
 
 /**
  * Encapsulates an address in the United States.
  * 
- * @author jack
+ * @author jack Modified by Amine Allaouchiche
  */
 public class Address implements Comparable<Address> {
 	private final String streetNumber;
@@ -147,17 +148,41 @@ public class Address implements Comparable<Address> {
 	@Override
 	public int compareTo(Address that) {
 
-		if (this.getState().toString().equals(that.getState().toString()) 
-				&& this.getCity().equals(that.getCity())
-			&& this.getPostalCode().equals(that.getPostalCode())) {
-				return this.streetNumber.compareTo(that.streetNumber);
-			} else if (this.getState().toString().equals(that.getState().toString()) 
-					&& this.getCity().equals(that.getCity())) {
-				return this.getPostalCode().compareTo(that.getPostalCode());
-			} else if (this.getState().toString().equals(that.getState().toString()) ) {
-				return this.getCity().compareTo(that.getCity());
-			} else {
-				return this.getState().toString().compareTo(that.getState().toString());
-			}
+		//		if (stringCompareHelper(this.getState().toString(),(that.getState().toString())) == 0  
+		//				&& stringCompareHelper(this.getCity(),that.getCity()) == 0
+		//			&&  stringCompareHelper (this.getPostalCode(),that.getPostalCode()) ==0) {
+		//				return stringCompareHelper (this.streetNumber,that.streetNumber);
+		//			} else if (stringCompareHelper(this.getState().toString(),(that.getState().toString())) == 0  
+		//					&& stringCompareHelper(this.getCity(),that.getCity()) == 0) {
+		//				return stringCompareHelper (this.getPostalCode(),that.getPostalCode());
+		//			} else if (stringCompareHelper(this.getState().toString(),(that.getState().toString())) == 0 ) {
+		//				return stringCompareHelper(this.getCity(),that.getCity());
+		//			} else {
+		//				return stringCompareHelper(this.getState().toString(),(that.getState().toString()));
+		//			}
+		//	}
+
+
+
+
+
+
+		// if states are not equal, return the result of their comparison
+		if (stringCompareHelper(this.getState().toString(),(that.getState().toString())) != 0)  
+		{
+			return stringCompareHelper (this.getState().toString(),that.getState().toString());
+			// if states are equal, and cities are not, return the result of their comparison
+		} else if (stringCompareHelper(this.getCity(),that.getCity()) != 0) {
+			return stringCompareHelper (this.getCity(),that.getCity());
+			// if states are and cities  equal, and postalcodes are not, return the result of their comparison
+		} else if (stringCompareHelper(this.getPostalCode(),that.getPostalCode()) != 0 ) {
+			return stringCompareHelper(this.getPostalCode(),that.getPostalCode());
+		} else {
+			// if states  and cities and postal codes areequal, return the result of  street numbers comparison
+			return stringCompareHelper(this.streetNumber,that.getStreetNumber());
+		}
 	}
+
+
+
 }
