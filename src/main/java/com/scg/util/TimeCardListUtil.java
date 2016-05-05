@@ -1,6 +1,7 @@
 package com.scg.util;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.scg.domain.Consultant;
@@ -27,7 +28,17 @@ public class TimeCardListUtil {
 		 */
 		public static List<TimeCard> getTimeCardsForDateRange(List<TimeCard> timeCards,
                     DateRange dateRange) {
-			return null;
+			
+			List<TimeCard>  list    = new ArrayList<>();
+		    for ( TimeCard card : timeCards )
+		    {
+
+		    	Date cardDate = card.getWeekStartingDay();
+		        if ( dateRange.isInRange(cardDate))
+		            list.add( card );
+		    }
+		    
+		    return list;
 				
 		}
 		
@@ -47,9 +58,20 @@ public class TimeCardListUtil {
 			
 		}
 
-		public static List<TimeCard> getTimeCardsForConsultant(ArrayList<TimeCard> timeCards, Consultant consultant) {
-			// TODO Auto-generated method stub
-			return null;
+
+		
+		
+		public static List<TimeCard> getTimeCardsForConsultant( List<TimeCard> timeCards, Consultant consultant )
+		{
+		    List<TimeCard>  list    = new ArrayList<>();
+		    for ( TimeCard card : timeCards )
+		    {
+		        Consultant  cons    = card.getConsultant();
+		        if ( cons.equals( consultant ) )
+		            list.add( card );
+		    }
+		    
+		    return list;
 		}
 
 }

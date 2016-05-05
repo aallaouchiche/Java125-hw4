@@ -26,7 +26,8 @@ public class DateRange {
 		    };
 	 
 	 // formatter for the string date parameters
-	private static final String DATE_FORMATTER = "EEEE, dd/MM/yyyy/hh:mm:ss";
+	//private static final String DATE_FORMATTER = "EEEE, dd/MM/yyyy/hh:mm:ss";
+	private static final String DATE_FORMATTER = "MM/dd/yyyy";
 	
 	/**
 	 * Constructs a range instance with the given start and end end dates.
