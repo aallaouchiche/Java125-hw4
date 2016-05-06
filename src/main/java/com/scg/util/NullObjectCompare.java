@@ -1,6 +1,6 @@
 package com.scg.util;
 
-class NullObjectCompare {
+public class NullObjectCompare {
 	
 	private static final int POSITIVE = 1;
 	private static final int ZERO = 0;

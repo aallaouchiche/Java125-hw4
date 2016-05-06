@@ -161,12 +161,7 @@ public class Address implements Comparable<Address> {
 		//				return stringCompareHelper(this.getState().toString(),(that.getState().toString()));
 		//			}
 		//	}
-
-
-
-
-
-
+		
 		// if states are not equal, return the result of their comparison
 		if (stringCompareHelper(this.getState().toString(),(that.getState().toString())) != 0)  
 		{

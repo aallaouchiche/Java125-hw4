@@ -1,6 +1,9 @@
 package com.scg.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -32,7 +35,6 @@ public class TimeCardListUtil {
 			List<TimeCard>  list    = new ArrayList<>();
 		    for ( TimeCard card : timeCards )
 		    {
-
 		    	Date cardDate = card.getWeekStartingDay();
 		        if ( dateRange.isInRange(cardDate))
 		            list.add( card );
@@ -47,6 +49,9 @@ public class TimeCardListUtil {
 		 * @param timeCards The list to sort.
 		 */
 		public static void sortByConsultantName(List<TimeCard> timeCards){
+			Collections.sort((List<TimeCard>) timeCards, (Comparator<? super TimeCard>) (first,  second)-> {
+				return first.getConsultant().compareTo(second.getConsultant());
+				});
 			
 		}
 		
@@ -55,12 +60,19 @@ public class TimeCardListUtil {
 		 * @param timeCards The list to sort
 		 */
 		public static void sortByStartDate(List<TimeCard> timeCards) {
-			
+			Collections.sort((List<TimeCard>) timeCards, (Comparator<? super TimeCard>) (first,  second)-> {
+			return first.getWeekStartingDay().compareTo(second.getWeekStartingDay());
+			});
 		}
 
 
 		
 		
+		/**
+		 * @param timeCards
+		 * @param consultant
+		 * @return
+		 */
 		public static List<TimeCard> getTimeCardsForConsultant( List<TimeCard> timeCards, Consultant consultant )
 		{
 		    List<TimeCard>  list    = new ArrayList<>();

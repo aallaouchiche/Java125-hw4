@@ -2,6 +2,7 @@ package com.scg.domain;
 
 import com.scg.util.Address;
 import com.scg.util.Name;
+import static com.scg.util.NullObjectCompare.*;
 
 /**
  * Encapsulates a billable account.
@@ -85,8 +86,22 @@ public final class ClientAccount implements Account, Comparable<ClientAccount>
     }
 
 	@Override
-	public int compareTo(ClientAccount o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(ClientAccount other) {
+		if (other == null ) {
+			return 1;
+		} else {
+			// if both contact names and addresses are equal, then the result is the comparison of the names
+			if (this.contact.compareTo(other.contact) == 0 && (this.address.compareTo(other.address) == 0)){
+				return stringCompareHelper(this.name, other.name);
+				// if the addresses are different, then 
+			} else if (this.contact.compareTo(other.contact) == 0){
+				return this.address.compareTo(other.address);
+				// the contact names are different, then it has more weight on the comparison
+				// return the result of the comparison
+			} else {
+				return this.contact.compareTo(other.contact);
+			}
+		}
+		
 	}
 }
